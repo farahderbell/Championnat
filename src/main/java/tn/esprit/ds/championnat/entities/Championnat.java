@@ -1,6 +1,8 @@
 package tn.esprit.ds.championnat.entities;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 
 @Entity
 @Table(name = "championnat")
@@ -11,6 +13,7 @@ public class Championnat {
     @Enumerated(EnumType.STRING)
     Categorie categorie;
     String LibelleC;
+    @Column()
     Integer Annee;
 
     public Championnat() {
@@ -48,6 +51,13 @@ public class Championnat {
         this.Annee = annee;
     }
 
+    @OneToOne
+    @JoinColumn(name = "detail_id", referencedColumnName = "idDetail") // clé étrangère
+    private DetailChampionnat detail;
+
+    // Many-to-Many vers Course (côté inverse)
+    @ManyToMany(mappedBy = "championnats")
+    private List<Course> courses;
 
 
 }

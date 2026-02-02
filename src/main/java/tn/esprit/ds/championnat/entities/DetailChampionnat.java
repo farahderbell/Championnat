@@ -39,4 +39,7 @@ public class DetailChampionnat {
     public void setDescription(String description) {
         this.description = description;
     }
+    // Relation inverse
+    @OneToOne(mappedBy = "detail")
+    private Championnat championnat;
 }

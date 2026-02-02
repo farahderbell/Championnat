@@ -50,4 +50,11 @@ public class Contrat {
     public void setArchived(Boolean archived) {
         this.archived = archived;
     }
+    @ManyToOne
+    @JoinColumn(name = "equipe_id_equipe")
+    private Equipe equipe;
+
+    @ManyToOne
+    @JoinColumn(name = "sponsor_id_sponsor")
+    private Sponsor sponsor;
 }

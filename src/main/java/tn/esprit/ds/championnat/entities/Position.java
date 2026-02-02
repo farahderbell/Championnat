@@ -40,4 +40,10 @@ public class Position {
     public void setNbPoints(Integer nbPoints) {
         this.nbPoints = nbPoints;
     }
+    @ManyToOne
+    Course course;
+
+    @ManyToOne
+    Pilote pilote;
+
 }
