@@ -21,13 +21,14 @@ public class SponsorService implements ISponsorService{
         sponsor.setBloquerContrat(false);
        return sponsorRepository.save(sponsor);
 
-       //or return sponsor;
+       //or  najmou na3mlou return sponsor;
 
 
     }
 
     @Override
     public List<Sponsor> ajouterSponsors(List<Sponsor> sponsors) {
+        //namlou boucle nsavou bel wehd bel wehd manestamlouch save all
         List<Sponsor> sponsorsSauves = new ArrayList<>();
 
         for (Sponsor s : sponsors) {
