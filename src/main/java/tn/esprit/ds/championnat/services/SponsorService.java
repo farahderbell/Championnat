@@ -15,7 +15,7 @@ public class SponsorService implements ISponsorService{
 
     @Override
     public Sponsor ajouterSponsor(Sponsor sponsor) {
-
+        //
         sponsor.setDateCreation(LocalDate.now());
         sponsor.setArchived(false);
         sponsor.setBloquerContrat(false);
@@ -53,6 +53,7 @@ public class SponsorService implements ISponsorService{
     public void supprimerSponsor(Long idSponsor) {
 
         if (sponsorRepository.existsById(idSponsor)) {
+            //kadin nabthou ken fel id mouch objet kemel
             sponsorRepository.deleteById(idSponsor);
             System.out.println("Sponsor supprimé avec succès !");
         } else {
@@ -63,12 +64,14 @@ public class SponsorService implements ISponsorService{
 
     @Override
     public List<Sponsor> listSponsors() {
+        //khayba find all djib li meoujoud fel base l kol
         return sponsorRepository.findAll();
     }
 
     @Override
     public Sponsor recupererSponsor(Long idSponsor) {
         if (sponsorRepository.existsById(idSponsor)) {
+            //.get ijib l objet
             return sponsorRepository.findById(idSponsor).get();
         } else {
             System.out.println("Sponsor avec l'id " + idSponsor + " n'existe pas.");
