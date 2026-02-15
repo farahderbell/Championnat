@@ -21,7 +21,7 @@ public class SponsorService implements ISponsorService{
         sponsor.setBloquerContrat(false);
        return sponsorRepository.save(sponsor);
 
-       //or  najmou na3mlou return sponsor;
+       //or  nejmou na3mlou return sponsor;
 
 
     }
@@ -35,7 +35,8 @@ public class SponsorService implements ISponsorService{
             s.setDateCreation(LocalDate.now());
             s.setArchived(false);
             s.setBloquerContrat(false);
-            sponsorsSauves.add(sponsorRepository.save(s));
+            Sponsor savedSponsor = sponsorRepository.save(s);
+            sponsorsSauves.add(savedSponsor);
         }
 
         return sponsorsSauves;
@@ -49,11 +50,14 @@ public class SponsorService implements ISponsorService{
         return sponsorRepository.save(sponsor);
     }
 
+
+
     @Override
     public void supprimerSponsor(Long idSponsor) {
 
         if (sponsorRepository.existsById(idSponsor)) {
             //kadin nabthou ken fel id mouch objet kemel
+            //khir men findbyid
             sponsorRepository.deleteById(idSponsor);
             System.out.println("Sponsor supprimé avec succès !");
         } else {
@@ -83,9 +87,13 @@ public class SponsorService implements ISponsorService{
     public Boolean archiverSponsor(Long idSponsor) {
 
         if (sponsorRepository.existsById(idSponsor)) {
+
         Sponsor s = sponsorRepository.findById(idSponsor).get();
-        s.setArchived(true);  // mettre archived à true
+
+        s.setArchived(true);
+
         sponsorRepository.save(s);
+
         System.out.println("Sponsor archivé avec succès !");
         return true;
     } else {
