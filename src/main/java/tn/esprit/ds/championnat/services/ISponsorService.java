@@ -1,9 +1,12 @@
 package tn.esprit.ds.championnat.services;
 
+import org.springframework.stereotype.Repository;
 import tn.esprit.ds.championnat.entities.Sponsor;
 
 import java.util.List;
 
+
+@Repository
 public interface ISponsorService {
 
     Sponsor ajouterSponsor(Sponsor sponsor);
