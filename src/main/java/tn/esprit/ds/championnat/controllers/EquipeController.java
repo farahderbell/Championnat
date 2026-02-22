@@ -15,10 +15,11 @@ import tn.esprit.ds.championnat.services.IEquipeService;
 
 public class EquipeController {
 
+
     private final IEquipeService equipeService;
 
-    @PostMapping("/add")
-    public Equipe ajouterEquipe(@RequestBody Equipe e) {
-        return equipeService.ajouterEquipe(e);
+    @PostMapping("/add-equipe")
+    public Equipe ajouterEquipe(@RequestBody Equipe equipe) {
+        return equipeService.ajouterEquipe(equipe);
     }
 }
