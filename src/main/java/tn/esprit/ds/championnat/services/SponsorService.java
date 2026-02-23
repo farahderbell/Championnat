@@ -1,6 +1,7 @@
 package tn.esprit.ds.championnat.services;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tn.esprit.ds.championnat.entities.Sponsor;
 import tn.esprit.ds.championnat.repositories.EquipeRepository;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 
 public class SponsorService implements ISponsorService{
 

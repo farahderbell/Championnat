@@ -51,5 +51,5 @@ public class EquipeController {
         return equipeService.recupererEquipe(idEquipe);
     }
 
-    
+
 }
