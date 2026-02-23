@@ -1,44 +1,33 @@
 package tn.esprit.ds.championnat.entities;
 import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
 @Table(name = "detailchampionnat")
+
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class DetailChampionnat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idDetail;
+     Long idDetail;
 
-    private String code;
+     String code;
 
-    private String description;
+     String description;
 
-    public DetailChampionnat() {
-    }
+    
 
-    public Long getIdDetail() {
-        return idDetail;
-    }
 
-    public void setIdDetail(Long idDetail) {
-        this.idDetail = idDetail;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
     // Relation inverse
     @OneToOne(mappedBy = "detail")
     private Championnat championnat;

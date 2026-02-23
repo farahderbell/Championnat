@@ -4,45 +4,38 @@ import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
 @Table(name = "course")
+
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
+
+
 public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCourse;
+     Long idCourse;
 
-    private String emplacement;
+    String emplacement;
 
-    private LocalDate dateCourse;
+     LocalDate dateCourse;
 
-    public Course() {
-    }
 
-    public Long getIdCourse() {
-        return idCourse;
-    }
 
-    public void setIdCourse(Long idCourse) {
-        this.idCourse = idCourse;
-    }
 
-    public String getEmplacement() {
-        return emplacement;
-    }
 
-    public void setEmplacement(String emplacement) {
-        this.emplacement = emplacement;
-    }
 
-    public LocalDate getDateCourse() {
-        return dateCourse;
-    }
-
-    public void setDateCourse(LocalDate dateCourse) {
-        this.dateCourse = dateCourse;
-    }
     // Many-to-Many vers Championnat
     @ManyToMany
     @JoinTable(
