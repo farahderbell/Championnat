@@ -25,7 +25,7 @@ public class DetailChampionnat {
 
      String description;
 
-    
+
 
 
     // Relation inverse
