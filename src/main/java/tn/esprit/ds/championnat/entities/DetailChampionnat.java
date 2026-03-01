@@ -15,6 +15,8 @@ import lombok.experimental.FieldDefaults;
 @EqualsAndHashCode
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
+
+
 public class DetailChampionnat {
 
     @Id
