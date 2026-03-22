@@ -1,4 +1,5 @@
 package tn.esprit.ds.championnat.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -32,5 +33,7 @@ public class DetailChampionnat {
 
     // Relation inverse
     @OneToOne(mappedBy = "detail")
+    // bech nhotou hethi bech metjinech l erreur INFINITE RECRUSION ki njarbou readChampionnat
+    @JsonIgnore
     private Championnat championnat;
 }

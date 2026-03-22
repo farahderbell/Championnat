@@ -37,7 +37,7 @@ public class Championnat {
 
 
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "detail_id", referencedColumnName = "idDetail") // clé étrangère
     private DetailChampionnat detail;
 
