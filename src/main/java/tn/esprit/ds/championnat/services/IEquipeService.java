@@ -1,8 +1,7 @@
 package tn.esprit.ds.championnat.services;
 
 import org.springframework.stereotype.Repository;
-import tn.esprit.ds.championnat.entities.Equipe;
-import tn.esprit.ds.championnat.entities.Sponsor;
+import tn.esprit.ds.championnat.entities.*;
 
 import java.util.List;
 
@@ -24,6 +23,8 @@ public interface IEquipeService {
     List<Equipe> listEquipes();
 
     Equipe recupererEquipe(Long idEquipe);
+
+    Equipe affecterPiloteToEquipe(Long idPilote, Long idEquipe);
 
 
 

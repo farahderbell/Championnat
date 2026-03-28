@@ -32,6 +32,7 @@ public class ChampionnatController {
     // houni ana l championnat o kadin naffecteou fel details
     @PutMapping("/affecterDetailToChampionnat/{idChampionnat}")
     @ResponseBody
+
     public Championnat affecterDetailToChampionnat(
             @RequestBody DetailChampionnat detail,
             @PathVariable("idChampionnat") Long idChampionnat) {
@@ -40,9 +41,18 @@ public class ChampionnatController {
 
     @GetMapping("/get-all-championnat")
     @ResponseBody
+
     public List<Championnat> listchampionnat() {
         return championnatService.listChampionnat();
     }
 
+    @PutMapping("/affectercourseToChampionnat/{idCourse}/{idChampionnat}")
+    @ResponseBody
+
+    public void affectercourseToChampionnat(@PathVariable("idCourse") Long idCourse,
+                                            @PathVariable("idChampionnat") Long idChampionnat) {
+        championnatService.affecterCourseToChampionnat(idCourse, idChampionnat);
+
+    }
 
 }

@@ -11,6 +11,7 @@ public interface IChampionnatService {
 
     Championnat addChampionnatEtDetails(Championnat c);
     Championnat affecterDetailsToChampionnat(DetailChampionnat detail , Long idChampionnat);
+    Championnat affecterCourseToChampionnat(Long idCourse, Long idChampionnat);
 
     List<Championnat> listChampionnat();
 }

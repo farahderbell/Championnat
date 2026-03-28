@@ -33,7 +33,9 @@ public class DetailChampionnat {
 
     // Relation inverse
     @OneToOne(mappedBy = "detail")
+
     // bech nhotou hethi bech metjinech l erreur INFINITE RECRUSION ki njarbou readChampionnat
+
     @JsonIgnore
     private Championnat championnat;
 }
