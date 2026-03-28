@@ -23,16 +23,11 @@ public class Position {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
 
-     Long idPosition;
+    Long idPosition;
 
-     Integer classement;
+    Integer classement;
 
     Integer nbPoints;
-
-
-
-
-
 
     @ManyToOne
     Course course;
