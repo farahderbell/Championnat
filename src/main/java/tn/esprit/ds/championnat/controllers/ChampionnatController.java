@@ -29,6 +29,8 @@ public class ChampionnatController {
     public Championnat ajouterEquipe(@RequestBody Championnat championnat) {
         return championnatService.addChampionnatEtDetails(championnat);
     }
+
+
     // houni ana l championnat o kadin naffecteou fel details
     @PutMapping("/affecterDetailToChampionnat/{idChampionnat}")
     @ResponseBody

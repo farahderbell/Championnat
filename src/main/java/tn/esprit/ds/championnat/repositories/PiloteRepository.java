@@ -5,4 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 import tn.esprit.ds.championnat.entities.Pilote;
 
 public interface PiloteRepository extends JpaRepository<Pilote,Long> {
+
+    Pilote findByLibelle(String libelle);
 }
+
+

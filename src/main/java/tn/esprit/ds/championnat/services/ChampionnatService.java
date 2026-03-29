@@ -34,7 +34,6 @@ public class ChampionnatService implements IChampionnatService{
 
     //kenna me7nech amlin cascad on nhebou nzidou details ll championnat mteou namlou haka
    //houni lezemna nkounou amlin setter ll details fel championnat
-
     @Override
     public Championnat affecterDetailsToChampionnat(DetailChampionnat detail, Long idChampionnat) {
 
@@ -47,7 +46,7 @@ public class ChampionnatService implements IChampionnatService{
     }
 
     @Override
-    public Championnat affecterCourseToChampionnat(Long idCourse, Long idChampionnat) {
+    public String affecterCourseToChampionnat(Long idCourse, Long idChampionnat) {
         Championnat championnat = championnatRepository.findById(idChampionnat).get();
         Course course = courseRepository.findById(idCourse).get();
 
@@ -58,8 +57,9 @@ public class ChampionnatService implements IChampionnatService{
         }
         coursesupdated.add(course);
         championnat.setCourses(coursesupdated);
+        championnatRepository.save(championnat);
 
-        return championnat;
+        return "added ! ";
     }
 
 

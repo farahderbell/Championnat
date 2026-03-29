@@ -19,4 +19,6 @@ public interface IPiloteService {
     List<Pilote> listPilote();
 
     Pilote recupererPilote(Long idPilote);
+
+    Pilote affecterPiloteToEquipe(String libellePilote, String libelleEquipe);
 }

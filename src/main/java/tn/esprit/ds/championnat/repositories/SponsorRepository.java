@@ -8,5 +8,6 @@ import tn.esprit.ds.championnat.entities.Sponsor;
 public interface SponsorRepository extends JpaRepository<Sponsor, Long> {
 
 
+Sponsor findByName(String name);
 
 }

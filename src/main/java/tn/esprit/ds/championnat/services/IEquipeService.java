@@ -24,7 +24,6 @@ public interface IEquipeService {
 
     Equipe recupererEquipe(Long idEquipe);
 
-    Equipe affecterPiloteToEquipe(Long idPilote, Long idEquipe);
 
 
 

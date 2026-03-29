@@ -2,8 +2,10 @@ package tn.esprit.ds.championnat.services;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import tn.esprit.ds.championnat.entities.Equipe;
 import tn.esprit.ds.championnat.entities.Pilote;
 import tn.esprit.ds.championnat.entities.Sponsor;
+import tn.esprit.ds.championnat.repositories.EquipeRepository;
 import tn.esprit.ds.championnat.repositories.PiloteRepository;
 
 import java.time.LocalDate;
@@ -17,6 +19,7 @@ import java.util.List;
 public class PiloteService implements IPiloteService {
 
     PiloteRepository piloteRepository;
+    EquipeRepository equipeRepository;
 
     @Override
     public String addPilote(Pilote pilote) {
@@ -73,4 +76,19 @@ public class PiloteService implements IPiloteService {
             return null;
         }
     }
-}
+
+    @Override
+    public Pilote affecterPiloteToEquipe(String libellePilote, String libelleEquipe) {
+        Pilote pilote = piloteRepository.findByLibelle(libellePilote);
+        if (pilote == null) {
+            throw new RuntimeException("Pilote non trouvé");
+        }
+        Equipe equipe = equipeRepository.findByLibelle(libelleEquipe);
+        if (equipe == null) {
+            throw new RuntimeException("Equipe non trouvée");
+        }
+        pilote.setEquipe(equipe);
+        return piloteRepository.save(pilote);
+    }
+    }
+

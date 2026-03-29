@@ -78,22 +78,7 @@ public class EquipeService implements IEquipeService {
         }
     }
 
-    @Override
-    public Equipe affecterPiloteToEquipe(Long idPilote, Long idEquipe) {
 
-        Pilote pilote = piloteRepository.findById(idPilote).get();
-        Equipe equipe = equipeRepository.findById(idEquipe).get();
-
-        if (pilote == null || equipe == null) {
-            return null;
-        }
-
-        pilote.setEquipe(equipe);
-        piloteRepository.save(pilote);
-
-        return equipe;
-
-    }
 
 
 }

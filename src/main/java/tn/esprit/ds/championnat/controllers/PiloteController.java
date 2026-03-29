@@ -65,4 +65,14 @@ public class PiloteController {
             @PathVariable("id") Long idPilote) {
         return piloteService.recupererPilote(idPilote);
     }
+
+    @Operation(summary = "affecter un pilote a une equipe")
+    @PutMapping("/affecter/{libellePilote}/{libelleEquipe}")
+    public Pilote affecterPiloteToEquipe(
+            @PathVariable String libellePilote,
+            @PathVariable String libelleEquipe) {
+
+        return piloteService.affecterPiloteToEquipe(libellePilote, libelleEquipe);
+    }
+
 }

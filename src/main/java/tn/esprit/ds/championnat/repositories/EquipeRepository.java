@@ -5,5 +5,7 @@ import tn.esprit.ds.championnat.entities.Equipe;
 
 public interface EquipeRepository extends JpaRepository<Equipe,Long> {
 
+    Equipe findByLibelle(String libelle);
+
 }
 
