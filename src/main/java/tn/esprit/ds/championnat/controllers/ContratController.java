@@ -12,6 +12,7 @@ import tn.esprit.ds.championnat.services.ContratService;
 
 public class ContratController {
 
+
     private ContratService contratService;
 
 
@@ -24,7 +25,61 @@ public class ContratController {
 
         return contratService.ajouterContratEtAffecterAEquipeEtSponsor(
                 contrat, libelleEquipe, nomSponsor, pays);
+
+
     }
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -20,4 +20,7 @@ public interface IContratService {
     Contrat recupererContrat(Long idContrat);
 
     Contrat ajouterContratEtAffecterAEquipeEtSponsor(Contrat contrat,String libelleEquipe,String nomSponsor,String pays);
+
+    void archiverContratsExpireesEtAffichageContratsActifsParEquipe();
+
 }

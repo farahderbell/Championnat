@@ -21,4 +21,5 @@ public interface IPiloteService {
     Pilote recupererPilote(Long idPilote);
 
     Pilote affecterPiloteToEquipe(String libellePilote, String libelleEquipe);
+    void miseAJourPointsEtClassement();
 }
