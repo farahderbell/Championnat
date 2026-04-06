@@ -98,6 +98,9 @@ public class PiloteService implements IPiloteService {
 
 
         int currentYear = LocalDate.now().getYear();
+        LocalDate startdate = LocalDate.now();
+        LocalDate enddate = startdate.plusDays(1);
+
 
 
         List<Pilote> pilotes = piloteRepository.findAll();
@@ -107,6 +110,7 @@ public class PiloteService implements IPiloteService {
             pilote.setNbPointsTotal(pilote.getNbPointsTotal() + 1);
             piloteRepository.save(pilote);
             int nbPoints = pilote.getNbPointsTotal();
+
 
 
         }
