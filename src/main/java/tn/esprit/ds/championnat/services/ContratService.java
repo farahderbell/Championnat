@@ -83,15 +83,11 @@ public class ContratService implements IContratService {
 
     }
 
-    @Transactional
+
     @Override
     @Scheduled(fixedRate = 30000)
     public void archiverContratsExpireesEtAffichageContratsActifsParEquipe() {
-
-        log.info("test");
-        System.out.println("test");
         int currentYear = LocalDate.now().getYear();
-
         List<Contrat> contrats = contratRepository.findAll();
 
         for (Contrat c : contrats) {
@@ -111,7 +107,7 @@ public class ContratService implements IContratService {
                 if (contratsEquipe != null) {
                     for (Contrat contrat : contratsEquipe) {
 
-                        if (!Boolean.TRUE.equals(c.getArchived())) {
+                        if (c.getArchived().equals(Boolean.FALSE)) {
 
                             System.out.println("L'équipe " + e.getLibelle() +
                                     " a un contrat de l'année " + contrat.getAnnee() +

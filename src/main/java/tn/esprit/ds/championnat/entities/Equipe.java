@@ -40,6 +40,6 @@ public class Equipe {
     @OneToMany(mappedBy = "equipe")
     private List<Pilote> pilotes;
 
-    @OneToMany(mappedBy = "equipe")
+    @OneToMany(mappedBy = "equipe" , fetch = FetchType.EAGER)
     private List<Contrat> contrats;
 }
